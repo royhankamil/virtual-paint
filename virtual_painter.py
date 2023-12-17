@@ -120,7 +120,7 @@ with mp_hands.Hands(min_detection_confidence=0.85, min_tracking_confidence=0.5, 
                         xp, yp = [x1, y1]
 
                     # clear canvas when hand closed
-                    if all(fingers[i] == 0 for i in range(0, 5)):
+                    if cv2.waitKey(3) & 0xFF == ord('c'):
                         img_canvas = np.zeros((height, width, 3), np.uint8)
                         xp, yp = [x1, y1]
 
